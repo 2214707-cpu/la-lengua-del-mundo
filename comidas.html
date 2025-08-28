@@ -1,0 +1,210 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Restaurante Sabores del Mundo - Comidas</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #fffaf0;
+        color: #4b2e05;
+        margin: 20px;
+        line-height: 1.6;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    body::before {
+        content: "Sabores del Mundo";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-30deg);
+        font-size: 6em;
+        color: rgba(180, 180, 180, 0.1);
+        user-select: none;
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 0;
+    }
+    header {
+        text-align: center;
+        background: linear-gradient(135deg, #f8b26a, #f4c27a);
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px #d98e33;
+        position: relative;
+        z-index: 1;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 3.5em;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 6px #b9741a;
+    }
+    header p {
+        margin-top: 8px;
+        font-size: 1.2em;
+        font-style: italic;
+        text-shadow: 1px 1px 3px #cba85e;
+    }
+    nav {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.1em;
+        z-index: 1;
+        position: relative;
+    }
+    nav a {
+        color: #7a4800;
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #f8b26a;
+    }
+    section {
+        margin-top: 40px;
+        position: relative;
+        z-index: 1;
+    }
+    h2 {
+        border-bottom: 4px solid #f8b26a;
+        padding-bottom: 8px;
+        color: #a05c0c;
+        text-shadow: 1px 1px 2px #c8a45c;
+    }
+    .platos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .plato {
+        background-color: #fff3e0;
+        border-radius: 16px;
+        box-shadow: 3px 5px 15px #d6b685cc;
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+        cursor: default;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+    .plato:hover {
+        transform: scale(1.05);
+        box-shadow: 5px 8px 25px #d6b685ff;
+    }
+    .plato img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        margin-bottom: 15px;
+        box-shadow: 2px 4px 10px #b68e42aa;
+        transition: transform 0.3s ease;
+    }
+    .plato:hover img {
+        animation: girar 2s linear infinite;
+    }
+    @keyframes girar {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .plato h3 {
+        margin: 15px 0 5px;
+        color: #7a4800;
+        text-shadow: 1px 1px 2px #ad7e26;
+    }
+    .plato p {
+        font-size: 0.95em;
+        color: #563f08;
+        margin: 6px 0;
+    }
+    .gramaje {
+        font-weight: 700;
+        color: #a05c0c;
+    }
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        font-style: italic;
+        color: #b07a20;
+        border-top: 2px solid #f8b26a;
+        padding-top: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    @media(max-width: 700px) {
+        .platos {
+            flex-direction: column;
+            align-items: center;
+        }
+        .plato {
+            width: 95%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Restaurante Sabores del Mundo</h1>
+    <p>Explora la gastronomía internacional con nosotros</p>
+</header>
+
+<nav>
+    <a href="bebidas.html">Bebidas</a> | 
+    <a href="comidas.html">Comidas</a> | 
+    <a href="postres.html">Postres</a>
+</nav>
+
+<section>
+    <h2>Platos Destacados</h2>
+    <div class="platos">
+        <div class="plato">
+            <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=600&q=80" alt="Sushi Japonés" />
+            <h3>Sushi Japonés</h3>
+            <p class="gramaje">250 g</p>
+            <p>Deliciosos rollos con arroz, pescado fresco y algas.</p>
+        </div>
+        <div class="plato">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80" alt="Paella Española" />
+            <h3>Paella Española</h3>
+            <p class="gramaje">350 g</p>
+            <p>Clásico plato de arroz con mariscos y azafrán.</p>
+        </div>
+        <div class="plato">
+            <img src="https://images.unsplash.com/photo-1543352634-4f7a9aef2ee8?auto=format&fit=crop&w=600&q=80" alt="Tacos Mexicanos" />
+            <h3>Tacos Mexicanos</h3>
+            <p class="gramaje">180 g (3 piezas)</p>
+            <p>Sabrosos tacos con carne, cebolla y cilantro.</p>
+        </div>
+        <div class="plato">
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=600&q=80" alt="Pho Vietnamita" />
+            <h3>Pho Vietnamita</h3>
+            <p class="gramaje">400 ml</p>
+            <p>Sopa aromática de fideos con carne y hierbas frescas.</p>
+        </div>
+        <div class="plato">
+            <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb39?auto=format&fit=crop&w=600&q=80" alt="Falafel" />
+            <h3>Falafel</h3>
+            <p class="gramaje">200 g (6 piezas)</p>
+            <p>Bocaditos fritos de garbanzo con especias del Medio Oriente.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Restaurante Sabores del Mundo
+</footer>
+
+</body>
+</html>

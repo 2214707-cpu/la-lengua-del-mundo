@@ -1,13 +1,165 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <title>Restaurante Sabores del Mundo - Bebidas</title>
 <style>
-    /* Igual CSS */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0fff4;
+        color: #045d29;
+        margin: 20px;
+        line-height: 1.6;
+        min-height: 100vh;
+    }
+    header {
+        text-align: center;
+        background: linear-gradient(135deg, #6fcf97, #56cc9d);
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px #3aa65f;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 3.5em;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 6px #2e8b57;
+    }
+    header p {
+        margin-top: 8px;
+        font-size: 1.2em;
+        font-style: italic;
+        text-shadow: 1px 1px 3px #4caf50;
+    }
+    nav {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.1em;
+    }
+    nav a {
+        color: #045d29;
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #6fcf97;
+    }
+    section {
+        margin-top: 40px;
+    }
+    h2 {
+        border-bottom: 4px solid #6fcf97;
+        padding-bottom: 8px;
+        color: #2e8b57;
+        text-shadow: 1px 1px 2px #5bc17b;
+    }
+    .bebidas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .bebida {
+        background-color: #e6f2e9;
+        border-radius: 16px;
+        box-shadow: 3px 5px 15px #a7d7b7cc;
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+    }
+    .bebida img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        margin-bottom: 15px;
+        box-shadow: 2px 4px 10px #75a967aa;
+        transition: transform 0.3s ease;
+    }
+    .bebida:hover img {
+        transform: scale(1.05);
+    }
+    .bebida h3 {
+        margin: 15px 0 5px;
+        color: #045d29;
+        text-shadow: 1px 1px 2px #3b8b4f;
+    }
+    .bebida p {
+        font-size: 0.95em;
+        color: #2e7d32;
+        margin: 6px 0;
+    }
+    .gramaje {
+        font-weight: 700;
+        color: #2e7d32;
+    }
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        font-style: italic;
+        color: #2e8b57;
+        border-top: 2px solid #6fcf97;
+        padding-top: 20px;
+    }
+    @media(max-width: 700px) {
+        .bebidas {
+            flex-direction: column;
+            align-items: center;
+        }
+        .bebida {
+            width: 95%;
+        }
+    }
 </style>
 </head>
 <body>
 
 <header>
-    <h1>Restaurante Sabores del
+    <h1>Restaurante Sabores del Mundo</h1>
+    <p>Bebidas refrescantes para todos los gustos</p>
+</header>
+
+<nav>
+    <a href="bebidas.html">Bebidas</a> | 
+    <a href="comidas.html">Comidas</a> | 
+    <a href="postres.html">Postres</a>
+</nav>
+
+<section>
+    <h2>Bebidas Populares</h2>
+    <div class="bebidas">
+        <div class="bebida">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Mojito" />
+            <h3>Mojito</h3>
+            <p class="gramaje">300 ml</p>
+            <p>Refrescante cóctel cubano con ron, menta y lima.</p>
+        </div>
+        <div class="bebida">
+            <img src="https://images.unsplash.com/photo-1562440499-30094d537620?auto=format&fit=crop&w=600&q=80" alt="Café Americano" />
+            <h3>Café Americano</h3>
+            <p class="gramaje">250 ml</p>
+            <p>Clásico café negro preparado con espresso y agua caliente.</p>
+        </div>
+        <div class="bebida">
+            <img src="https://images.unsplash.com/photo-1571639481709-9734f17931e4?auto=format&fit=crop&w=600&q=80" alt="Jugo de Naranja" />
+            <h3>Jugo de Naranja Natural</h3>
+            <p class="gramaje">350 ml</p>
+            <p>Exprimido fresco, sin azúcares añadidos.</p>
+        </div>
+        <div class="bebida">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Té Helado" />
+            <h3>Té Helado</h3>
+            <p class="gramaje">300 ml</p>
+            <p>Bebida refrescante con toque de limón y menta.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Restaurante Sabores del Mundo
+</footer>
+
+</body>
+</html>
