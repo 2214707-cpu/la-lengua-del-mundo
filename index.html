@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Restaurante Sabores del Mundo - Comidas</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #fffaf0;
+        color: #4b2e05;
+        margin: 20px;
+        line-height: 1.6;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    body::before {
+        content: "Sabores del Mundo";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-30deg);
+        font-size: 6em;
+        color: rgba(180, 180, 180, 0.1);
+        user-select: none;
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 0;
+    }
+    header {
+        text-align: center;
+        background: linear-gradient(135deg, #f8b26a, #f4c27a);
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px #d98e33;
+        position: relative;
+        z-index: 1;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 3.5em;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 6px #b9741a;
+    }
+    header p {
+        margin-top: 8px;
+        font-size: 1.2em;
+        font-style: italic;
+        text-shadow: 1px 1px 3px #cba85e;
+    }
+    nav {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.1em;
+        z-index: 1;
+        position: relative;
+    }
+    nav a {
+        color: #7a4800;
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #f8b26a;
+    }
+    /* Botón para formulario */
+    .btn-formulario {
+        display: inline-block;
+        margin: 25px auto 0;
+        padding: 12px 30px;
+        font-size: 1.1em;
+        background-color: #f8b26a;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        color: #4b2e05;
+        box-shadow: 0 4px 10px #d98e33;
+        transition: background-color 0.3s ease;
+        text-align: center;
+    }
+    .btn-formulario:hover {
+        background-color: #f4c27a;
+    }
+    section {
+        margin-top: 40px;
+        position: relative;
+        z-index: 1;
+    }
+    h2 {
+        border-bottom: 4px solid #f8b26a;
+        padding-bottom: 8px;
+        color: #a05c0c;
+        text-shadow: 1px 1px 2px #c8a45c;
+    }
+    .platos, .recetas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .plato, .receta {
+        background-color: #fff3e0;
+        border-radius: 16px;
+        box-shadow: 3px 5px 15px #d6b685cc;
+        width: 300px;
+        padding: 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+    .plato:hover, .receta:hover {
+        transform: scale(1.05);
+        box-shadow: 5px 8px 25px #d6b685ff;
+    }
+    .plato img, .receta img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        margin-bottom: 15px;
+        box-shadow: 2px 4px 10px #b68e42aa;
+        transition: transform 0.3s ease;
+    }
+    .plato:hover img, .receta:hover img {
+        animation: girar 2s linear infinite;
+    }
+    @keyframes girar {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .receta h3, .plato h3 {
+        margin: 15px 0 10px;
+        color: #7a4800;
+        text-shadow: 1px 1px 2px #ad7e26;
+    }
+    .receta p {
+        font-size: 0.95em;
+        text-align: left;
+        color: #563f08;
+    }
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        font-style: italic;
+        color: #b07a20;
+        border-top: 2px solid #f8b26a;
+        padding-top: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+        background-color: #fff3e0;
+        margin: 8% auto;
+        padding: 25px 30px;
+        border-radius: 16px;
+        width: 90%;
+        max-width: 520px;
+        box-shadow: 0 0 25px #d6b685;
+        position: relative;
+        font-size: 1em;
+        color: #4b2e05;
+    }
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        color: #a05c0c;
+        font-size: 32px;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.3s ease;
+    }
+    .close-btn:hover {
+        color: #7a4800;
+    }
+    .modal-content h3 {
+        margin-top: 0;
+        color: #7a4800;
+        text-shadow: 1px 1px 2px #ad7e26;
+        font-size: 1.8em;
+    }
+    .modal-content p {
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+    @media(max-width: 700px) {
+        .platos, .recetas {
+            flex-direction: column;
+            align-items: center;
+        }
+        .plato, .receta {
+            width: 95%;
+        }
+        .modal-content {
+            padding: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Restaurante Sabores del Mundo</h1>
+    <p>Explora la gastronomía internacional con nosotros</p>
+</header>
+
+<nav>
+    <a href="bebidas.html">Bebidas</a> | 
+    <a href="comidas.html">Comidas</a> | 
+    <a href="postres.html">Postres</a>
+</nav>
+
+<div style="text-align: center;">
+    <button class="btn-formulario" onclick="window.location.href='formulario.html'">Ir al formulario</button>
+</div>
+
+<section>
+    <h2>Platos Destacados</h2>
+    <div class="platos">
+        <div class="plato" onclick="openModal('modalSushi')">
+            <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=600&q=80" alt="Sushi Japonés" />
+            <h3>Sushi Japonés</h3>
+            <p>Deliciosos rollos con arroz, pescado fresco y algas.</p>
+        </div>
+        <div class="plato" onclick="openModal('modalPaella')">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=80" alt="Paella Española" />
+            <h3>Paella Española</h3>
+            <p>Clásico plato de arroz con mariscos y azafrán.</p>
+        </div>
+        <div class="plato" onclick="openModal('modalTacos')">
+            <img src="https://images.unsplash.com/photo-1543352634-4f7a9aef2ee8?auto=format&fit=crop&w=600&q=80" alt="Tacos Mexicanos" />
+            <h3>Tacos Mexicanos</h3>
+            <p>Sabrosos tacos con carne, cebolla y cilantro.</p>
+        </div>
+        <div class="plato" onclick="openModal('modalPho')">
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=600&q=80" alt="Pho Vietnamita" />
+            <h3>Pho Vietnamita</h3>
+            <p>Sopa aromática de fideos con carne y hierbas frescas.</p>
+        </div>
+        <div class="plato" onclick="openModal('modalFalafel')">
+            <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb39?auto=format&fit=crop&w=600&q=80" alt="Falafel" />
+            <h3>Falafel</h3>
+            <p>Bocaditos fritos de garbanzo con especias del Medio Oriente.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Recetas Populares</h2>
+    <div class="recetas">
+        <div class="receta" onclick="openModal('modalCarbonara')">
+            <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=600&q=80" alt="Receta Pasta Italiana" />
+            <h3>Pasta Carbonara</h3>
+            <p>Una receta clásica italiana con sabor intenso.</p>
+        </div>
+        <div class="receta" onclick="

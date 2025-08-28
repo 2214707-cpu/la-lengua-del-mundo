@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Restaurante Sabores del Mundo - Postres</title>
+<style>
+    /* Copia el mismo CSS */
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Restaurante Sabores del Mundo</h1>
+    <p>Explora la gastronomía internacional con nosotros</p>
+</header>
+
+<nav>
+    <a href="bebidas.html">Bebidas</a> | 
+    <a href="comidas.html">Comidas</a> | 
+    <a href="postres.html">Postres</a>
+</nav>
+
+<section>
+    <h2>Postres</h2>
+    <div class="recetas">
+        <div class="receta" onclick="openModal('modalCremeBrulee')">
+            <img src="https://images.unsplash.com/photo-1604908177529-63cdb6861d6e?auto=format&fit=crop&w=600&q=80" alt="Receta Postre Francés" />
+            <h3>Crème Brûlée</h3>
+            <p>Un postre francés cremoso con una capa caramelizada.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Modal postres -->
+<div id="modalCremeBrulee" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modalCremeBrulee')">&times;</span>
+        <h3>Crème Brûlée</h3>
+        <p><strong>Ingredientes:</strong> Crema, yemas de huevo, azúcar, vainilla.</p>
+        <p><strong>Contenido Calórico:</strong> Aproximadamente 300 calorías por porción.</p>
+        <p><strong>Instrucciones:</strong> Mezcla ingredientes, hornea a baño maría. Deja enfriar y carameliza azúcar encima.</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Restaurante Sabores del Mundo - Todos los derechos reservados
+</footer>
+
+<script>
+    function openModal(id) {
+        document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+    window.onclick = function(event) {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if(event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
