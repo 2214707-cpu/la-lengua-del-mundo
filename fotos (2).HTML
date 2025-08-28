@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Galería de Imágenes Subidas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .gallery img {
+            max-width: 180px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.3);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Galería con tus Imágenes</h1>
+    <div class="gallery">
+        <img src="descarga.JPG" alt="Imagen 1" />
+        <img src="0cc19417-eb82-42c9-ae47-b61e0f71b4ef.png" alt="Imagen 2" />
+        <img src="f40f06e8-a000-4c67-823e-8d939120153e.png" alt="Imagen 3" />
+        <img src="0d678b99-702c-44c0-90f4-7f102d88c3d4.png" alt="Imagen 4" />
+        <img src="1e0c2a93-ae99-4866-9e0c-2794adc1028e.png" alt="Imagen 5" />
+    </div>
+</body>
+</html>

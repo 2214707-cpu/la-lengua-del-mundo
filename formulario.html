@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario de Retroalimentación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    form {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      resize: vertical;
+      font-family: inherit;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="https://formspree.io/f/xvgqjerz" method="POST">
+    <h2>Retroalimentación del Servicio</h2>
+
+    <label for="servicio">1. ¿Cómo fue su servicio?</label>
+    <textarea id="servicio" name="servicio" rows="3" required></textarea>
+
+    <label for="atencion">2. ¿Qué tal lo atendieron?</label>
+    <textarea id="atencion" name="atencion" rows="3" required></textarea>
+
+    <label for="velada">3. ¿Cómo estuvo su velada?</label>
+    <textarea id="velada" name="velada" rows="3" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
+</html>
+
